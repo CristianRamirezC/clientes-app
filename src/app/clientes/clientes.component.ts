@@ -13,7 +13,8 @@ export class ClientesComponent implements OnInit {
   constructor(private clienteService: ClienteService) { }
 
   ngOnInit(): void {
-    this.clientes = this.clienteService.getClientes();
+    this.clienteService.getClientes().subscribe(  //getclientes va a ser observado por los Observadores. Usamos el metodo subscribe
+      clientes => this.clientes = clientes //"Funcion Anonima" / este es nuestro observador
+    );
   }
-
 }
