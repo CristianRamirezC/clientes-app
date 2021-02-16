@@ -8,13 +8,13 @@ import { ClienteService } from './cliente.service';
 })
 export class ClientesComponent implements OnInit {
 
-  clientes: Cliente[] = [];
+  clientes:Cliente[] = [];
 
-  constructor(private clienteService: ClienteService) { }
+  constructor(private clienteService:ClienteService) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {                              //Stream
     this.clienteService.getClientes().subscribe(  //getclientes va a ser observado por los Observadores. Usamos el metodo subscribe
-      clientes => this.clientes = clientes //"Funcion Anonima" / este es nuestro observador
+      clientes => this.clientes = clientes        //"Funcion Anonima" / este es nuestro observador
     );
   }
 }

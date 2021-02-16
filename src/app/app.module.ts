@@ -8,6 +8,8 @@ import { DirectivaComponent } from './directiva/directiva.component';
 import { ClientesComponent } from './clientes/clientes.component';
 import { ClienteService } from './clientes/cliente.service'
 import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+
 
 const routes: Routes = [ //rutas de la pagina
   {path: '', redirectTo: '/clientes', pathMatch: 'full'}, //ruta para la pagina home, la redirigiremos a la direccion del componente clientes
@@ -25,6 +27,7 @@ const routes: Routes = [ //rutas de la pagina
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     RouterModule.forRoot(routes) // importamos las rutas
   ],
   providers: [ClienteService],
